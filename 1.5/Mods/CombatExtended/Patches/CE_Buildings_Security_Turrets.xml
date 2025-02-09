@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<!-- Remove refuelable property -->
+	<Operation Class="PatchOperationRemove">
+		<xpath>Defs/ThingDef[defName = "VCE_Turret_Cannon"]/comps/li[@Class = "CompProperties_Refuelable"]</xpath>
+	</Operation>
+
+	<!-- Replace vanilla thingClass -->
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="VCE_Turret_Cannon"]</xpath>
+		<value>
+			<thingClass>CombatExtended.Building_TurretGunCE</thingClass>
+		</value>
+	</Operation>
+
+	<!-- Cannon - Based on the M1897 12-pounder -->
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[@Name="VCE_BaseCannonBuilding"]/fillPercent</xpath>
+		<value>
+			<fillPercent>0.85</fillPercent>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[@Name="VCE_BaseCannonBuilding"]/building/turretBurstWarmupTime</xpath>
+		<value>
+			<turretBurstWarmupTime>3.3</turretBurstWarmupTime>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[@Name="VCE_BaseCannonBuilding"]/building/turretBurstCooldownTime</xpath>
+		<value>
+			<turretBurstCooldownTime>2.7</turretBurstCooldownTime>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationRemove">
+		<xpath>Defs/ThingDef[@Name="VCE_BaseCannonBuilding"]/placeWorkers/li[.="PlaceWorker_NotUnderRoof"]</xpath>
+	</Operation>
+
+	<Operation Class="CombatExtended.PatchOperationMakeGunCECompatible">
+		<defName>VCE_Artillery_Cannon</defName>
+		<statBases>
+			<RangedWeapon_Cooldown>2.7</RangedWeapon_Cooldown>
+			<SightsEfficiency>0.80</SightsEfficiency>
+			<ShotSpread>0.15</ShotSpread>
+			<SwayFactor>0.81</SwayFactor>
+			<Mass>125</Mass>
+		</statBases>
+		<AmmoUser>
+			<magazineSize>1</magazineSize>
+			<reloadTime>10</reloadTime>
+			<ammoSet>AmmoSet_CannonBall</ammoSet>
+		</AmmoUser>
+		<FireModes>
+			<aiUseBurstMode>FALSE</aiUseBurstMode>
+			<aiAimMode>AimedShot</aiAimMode>
+		</FireModes>
+		<weaponTags>
+			<li>TurretGun</li>
+		</weaponTags>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="VCE_Artillery_Cannon"]/verbs</xpath>
+		<value>
+			<verbs>
+				<li Class="CombatExtended.VerbPropertiesCE">
+					<recoilAmount>2.40</recoilAmount>
+					<verbClass>CombatExtended.Verb_ShootCE</verbClass>
+					<hasStandardCommand>true</hasStandardCommand>
+					<defaultProjectile>Bullet_CannonBall_Round</defaultProjectile>
+					<warmupTime>3.3</warmupTime>
+					<range>64</range>
+					<minRange>16</minRange>
+					<soundCast>VCE_Shot_Cannon</soundCast>
+					<soundCastTail>GunTail_Heavy</soundCastTail>
+					<muzzleFlashScale>18</muzzleFlashScale>
+					<targetParams>
+						<canTargetLocations>true</canTargetLocations>
+					</targetParams>
+					<recoilPattern>Mounted</recoilPattern>
+				</li>
+			</verbs>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="VCE_Turret_Cannon"]</xpath>
+		<value>
+			<statBases>
+				<Bulk>150</Bulk>
+				<Mass>250</Mass>
+			</statBases>
+		</value>
+	</Operation>
+
+</Patch>

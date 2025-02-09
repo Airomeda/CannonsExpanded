@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+  <name>Vanilla Cannons Expanded</name>
+  <author>Credits to VE Team</author>
+  <supportedVersions>
+    <li>1.5</li>
+  </supportedVersions>
+  <packageId>VCE.Unofficial</packageId>
+  <description>An unofficial add-on for stripped version of VFE - Pirates, with only a cannon left.</description>
+  <modDependencies />
+  <loadAfter>
+    <li>brrainz.harmony</li>
+    <li>Ludeon.RimWorld.Royalty</li>
+    <li>Ludeon.RimWorld.Ideology</li>
+    <li>Ludeon.RimWorld.Biotech</li>
+    <li>Ludeon.RimWorld.Anomaly</li>
+    <li>CETeam.CombatExtended</li>
+  </loadAfter>
+	<incompatibleWith />
+</ModMetaData>

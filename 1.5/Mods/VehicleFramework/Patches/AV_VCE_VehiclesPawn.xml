@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Alpha Vehicles - Neolithic</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+
+				<!-- Exhaustment Comps -->
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/Vehicles.VehicleDef[defName="VCE_CannonVehicle"]/comps</xpath>
+					<value>
+						<li Class="AlphaVehicles.CompProperties_AddHediffToVehiclePassenger">
+							<hediffsToAdd>
+								<li>
+									<hediff>AV_Exhausted</hediff>
+									<role>Operator</role>
+								</li>
+							</hediffsToAdd>
+						</li>
+					</value>
+				</li>
+
+			</operations>
+		</match>
+	</Operation>
+
+</Patch>

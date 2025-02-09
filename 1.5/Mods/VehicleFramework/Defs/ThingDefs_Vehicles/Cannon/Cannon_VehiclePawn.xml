@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <Vehicles.VehicleDef ParentName="BaseVehiclePawn">
+    <defName>VCE_CannonVehicle</defName>
+    <label>Cannon</label>
+    <description>A WIP cannon.\n\nWIP characteristics.\n\n&lt;color=#bb8f04&gt;Crew:&lt;/color&gt; Gunner x2\n&lt;color=#bb8f04&gt;Fuel type:&lt;/color&gt; None</description>
+    <graphicData>
+      <texPath>Things/Vehicles/Land/Vehicle_Cannon</texPath>
+      <graphicClass>Vehicles.Graphic_Vehicle</graphicClass>
+      <shaderType>Cutout</shaderType>
+      <drawSize>(2.5, 2.5)</drawSize>
+    </graphicData>
+    <fillPercent>0.5</fillPercent>
+    <buildDef>VCE_CannonVehicle_Blueprint</buildDef>
+    <size>(2, 2)</size>
+    <vehicleMovementPermissions>DriverNeeded</vehicleMovementPermissions>
+    <vehicleCategory>Combat</vehicleCategory>
+    <techLevel>Medieval</techLevel>
+    <vehicleType>Land</vehicleType>
+    <statBases>
+      <ArmorRating_Blunt>0.4</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.75</ArmorRating_Sharp>
+      <Flammability>0.25</Flammability>
+      <MarketValue>450</MarketValue>
+    </statBases>
+    <vehicleStats>
+      <Mass>30</Mass>
+      <MoveSpeed>1</MoveSpeed>
+      <CargoCapacity>100</CargoCapacity>
+      <RepairRate>0.75</RepairRate>
+    </vehicleStats>
+    <soundSustainersOnEvent />
+    <race>
+      <baseBodySize>1</baseBodySize>
+    </race>
+    <properties>
+      <customSnowCategoryTicks AssignDefaults="1" />
+      <customRoadCosts AssignDefaults="0.85" />
+      <winterSpeedMultiplier>0.3</winterSpeedMultiplier>
+      <worldSpeedMultiplier>1.0</worldSpeedMultiplier>
+      <customHillinessCosts>
+        <SmallHills>0.15</SmallHills>
+        <LargeHills>0.6</LargeHills>
+        <Mountainous>1.5</Mountainous>
+      </customHillinessCosts>
+      <vehicleJobLimitations>
+        <li>(RepairVehicle, 1)</li>
+      </vehicleJobLimitations>
+      <roles>
+        <li>
+          <key>gunnerA</key>
+          <label>Cannoneer</label>
+          <slots>1</slots>
+          <slotsToOperate>1</slotsToOperate>
+          <exposed>true</exposed>
+          <hitbox>
+            <side>Body</side>
+          </hitbox>
+          <handlingTypes>
+            <li>Movement</li>
+            <li>Turret</li>
+          </handlingTypes>
+          <turretIds>
+            <li>mainTurret</li>
+          </turretIds>
+          <pawnRenderer>
+            <layer>1</layer>
+            <layerNorth>1</layerNorth>
+            <layerSouth>-1</layerSouth>
+            <layerEast>1</layerEast>
+            <angleNorth>0</angleNorth>
+            <angleEast>0</angleEast>
+            <angleNorthEast>0</angleNorthEast>
+            <angleSouthEast>0</angleSouthEast>
+            <drawOffsetNorth>(0.8,0,-0.85)</drawOffsetNorth>
+            <drawOffsetSouth>(-0.8,0,1.55)</drawOffsetSouth>
+            <drawOffsetEast>(-1.2,0,-0.55)</drawOffsetEast>
+          </pawnRenderer>
+        </li>
+        <li>
+          <key>gunnerB</key>
+          <label>Assistant</label>
+          <slots>1</slots>
+          <exposed>true</exposed>
+          <hitbox>
+            <side>Body</side>
+          </hitbox>
+          <pawnRenderer>
+            <layer>0.9</layer>
+            <layerNorth>1</layerNorth>
+            <layerSouth>-1</layerSouth>
+            <layerEast>0.8</layerEast>
+            <angleNorth>0</angleNorth>
+            <angleEast>0</angleEast>
+            <angleNorthEast>0</angleNorthEast>
+            <angleSouthEast>0</angleSouthEast>
+            <drawOffsetNorth>(-0.8,0,-0.85)</drawOffsetNorth>
+            <drawOffsetSouth>(0.8,0,1.55)</drawOffsetSouth>
+            <drawOffsetEast>(-1.2,0.5,1)</drawOffsetEast>
+          </pawnRenderer>
+        </li>
+      </roles>
+    </properties>
+    <components>
+      <li>
+        <key>LeftWheel</key>
+        <label>Left Wheel</label>
+        <health>50</health>
+        <depth>External</depth>
+        <armor>
+          <ArmorRating_Blunt>0</ArmorRating_Blunt>
+          <ArmorRating_Sharp>0</ArmorRating_Sharp>
+        </armor>
+        <tags>
+          <li>Wheel</li>
+        </tags>
+        <categories>
+          <li>MoveSpeed</li>
+        </categories>
+      </li>
+      <li>
+        <key>RightWheel</key>
+        <label>Right Wheel</label>
+        <health>50</health>
+        <depth>External</depth>
+        <armor>
+          <ArmorRating_Blunt>0</ArmorRating_Blunt>
+          <ArmorRating_Sharp>0</ArmorRating_Sharp>
+        </armor>
+        <tags>
+          <li>Wheel</li>
+        </tags>
+        <categories>
+          <li>MoveSpeed</li>
+        </categories>
+      </li>
+      <li>
+        <key>SteelStructure</key>
+        <label>Steel Structure</label>
+        <health>80</health>
+        <depth>External</depth>
+        <armor>
+          <ArmorRating_Blunt>0.1</ArmorRating_Blunt>
+          <ArmorRating_Sharp>0.1</ArmorRating_Sharp>
+        </armor>
+        <hitbox>
+          <side>Front</side>
+        </hitbox>
+      </li>
+      <li>
+      <key>Handles</key>
+      <label>Handles</label>
+      <health>20</health>
+      <depth>External</depth>
+      <categories>
+        <li>MoveSpeed</li>
+      </categories>
+      </li>
+    </components>
+    <comps>
+      <li Class="Vehicles.CompProperties_VehicleTurrets">
+        <turrets>
+          <li>
+            <turretDef>VCE_CannonVehicle_Turret</turretDef>
+            <gizmoLabel>Cannon Gun</gizmoLabel>
+            <angleRestricted>(345,15)</angleRestricted>
+            <aimPieOffset>(0, 0.5)</aimPieOffset>
+            <key>mainTurret</key>
+          </li>
+        </turrets>
+      </li>
+    </comps>
+  </Vehicles.VehicleDef>
+
+</Defs>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <Vehicles.VehicleBuildDef ParentName="VehicleBaseBuildable">
+    <defName>VCE_CannonVehicle_Blueprint</defName>
+    <label>cannon</label>
+    <description>A WIP cannon.\n\nWIP characteristics.\n\n&lt;color=#bb8f04&gt;Crew:&lt;/color&gt; Gunner x2\n&lt;color=#bb8f04&gt;Fuel type:&lt;/color&gt; None</description>
+    <designationCategory>VF_Vehicles</designationCategory>
+    <graphicData>
+      <texPath>Things/Vehicles/Land/Vehicle_Cannon</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(2.5, 2.5)</drawSize>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>300</MaxHitPoints>
+      <WorkToBuild>5000</WorkToBuild>
+      <Flammability>0.25</Flammability>
+    </statBases>
+    <size>(2, 2)</size>
+    <researchPrerequisites>
+      <li>Smithing</li>
+    </researchPrerequisites>
+    <costList>
+      <WoodLog>60</WoodLog>
+      <Steel>480</Steel>
+    </costList>
+    <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+    <thingToSpawn>VCE_CannonVehicle</thingToSpawn>
+    <constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+  </Vehicles.VehicleBuildDef>
+
+</Defs>

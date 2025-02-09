@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+  <Vehicles.VehicleTurretDef ParentName="VehicleTurretBase">
+    <defName>VCE_CannonVehicle_Turret</defName>
+    <label>cannon gun</label>
+    <description>a 12-pounder cannon.</description>
+    <turretType>Rotatable</turretType>
+    <shotSound>VCE_Shot_Cannon</shotSound>
+    <projectile>VCE_Bullet_Cannonball</projectile>
+    <reloadTimer>10</reloadTimer>
+    <warmUpTimer>4.0</warmUpTimer>
+    <magazineCapacity>5</magazineCapacity>
+    <chargePerAmmoCount>2</chargePerAmmoCount>
+    <genericAmmo>true</genericAmmo>
+    <ammunition>
+      <thingDefs>
+        <li>Steel</li>
+      </thingDefs>
+    </ammunition>
+    <hitFlags>IntendedTarget</hitFlags>
+    <autoSnapTargeting>false</autoSnapTargeting>
+    <rotationSpeed>3</rotationSpeed>
+    <projectileOffset>2.5</projectileOffset>
+    <projectileShifting>
+      <li>0</li>
+    </projectileShifting>
+    <minRange>5</minRange>
+    <maxRange>50.9</maxRange>
+    <attachProjectileFlag>Tank</attachProjectileFlag>
+    <vehicleRecoil>
+      <distanceTotal>0.5</distanceTotal>
+      <distancePerTick>0.09</distancePerTick>
+      <speedMultiplierPostRecoil>0.35</speedMultiplierPostRecoil>
+    </vehicleRecoil>
+    <fireModes>
+      <li>
+        <shotsPerBurst>1</shotsPerBurst>
+        <ticksBetweenShots>12</ticksBetweenShots>
+        <ticksBetweenBursts>60</ticksBetweenBursts>
+        <label>Single</label>
+        <texPath>UI/Gizmos/FireRate_Single</texPath>
+      </li>
+    </fireModes>
+    <gizmoIconTexPath>Things/Vehicles/Land/Vehicle_Cannon_TurretGizmo</gizmoIconTexPath>
+    <gizmoIconScale>1.0</gizmoIconScale>
+    <graphicData>
+      <texPath>Things/Vehicles/None</texPath>
+      <graphicClass>Vehicles.Graphic_Turret</graphicClass>
+      <shaderType>Cutout</shaderType>
+      <drawSize>(1, 1)</drawSize>
+    </graphicData>
+    <motes>
+      <li>
+        <cycles>1</cycles>
+        <moteDef>Mote_CannonPlume</moteDef>
+        <offset>(0, 0, 1.15)</offset>
+        <animationType>Reset</animationType>
+      </li>
+    </motes>
+  </Vehicles.VehicleTurretDef>
+
+</Defs>

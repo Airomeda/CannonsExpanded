@@ -1,0 +1,9 @@
+<loadFolders>
+	<v1.5>
+		<li>/</li>
+		<li>1.5</li>
+		<li IfModActive="CETeam.CombatExtended">1.5/Mods/CombatExtended</li>
+        <li IfModActive="CETeam.CombatExtended_copy">1.5/Mods/CombatExtended</li>
+		<li IfModActive="SmashPhil.VehicleFramework">1.5/Mods/VehicleFramework</li>
+	</v1.5>
+</loadFolders>

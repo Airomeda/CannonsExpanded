@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<!-- Replace research requirement -->
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[@Name="VCE_BaseCannonBuilding"]/researchPrerequisites/li[.="Smithing"]</xpath>
+		<value>
+			<li>CE_Gunpowder</li>
+		</value>
+	</Operation>
+
+</Patch>

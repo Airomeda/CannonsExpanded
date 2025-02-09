@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Combat Extended</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+
+				<!-- Turret -->
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/Vehicles.VehicleTurretDef[defName="VCE_CannonVehicle_Turret"]/projectile</xpath>
+					<value>
+						<projectile>Bullet_CannonBall_Round</projectile>
+					</value>
+				</li>
+
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/Vehicles.VehicleTurretDef[defName="VCE_CannonVehicle_Turret"]/reloadTimer</xpath>
+					<value>
+						<reloadTimer>10.0</reloadTimer>
+					</value>
+				</li>
+
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/Vehicles.VehicleTurretDef[defName="VCE_CannonVehicle_Turret"]/warmUpTimer</xpath>
+					<value>
+						<warmUpTimer>3.3</warmUpTimer>
+					</value>
+				</li>
+
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/Vehicles.VehicleTurretDef[defName="VCE_CannonVehicle_Turret"]/magazineCapacity</xpath>
+					<value>
+						<magazineCapacity>1</magazineCapacity>
+					</value>
+				</li>
+
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/Vehicles.VehicleTurretDef[defName="VCE_CannonVehicle_Turret"]/minRange</xpath>
+					<value>
+						<minRange>16</minRange>
+					</value>
+				</li>
+
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/Vehicles.VehicleTurretDef[defName="VCE_CannonVehicle_Turret"]/maxRange</xpath>
+					<value>
+						<maxRange>64</maxRange>
+					</value>
+				</li>
+
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/Vehicles.VehicleTurretDef[defName="VCE_CannonVehicle_Turret"]/fireModes</xpath>
+					<value>
+						<fireModes>
+							<li>
+								<shotsPerBurst>1</shotsPerBurst>
+								<ticksBetweenShots>15</ticksBetweenShots>
+								<ticksBetweenBursts>60</ticksBetweenBursts>
+								<label>Single</label>
+								<texPath>UI/Gizmos/FireRate_Single</texPath>
+							</li>
+						</fireModes>
+					</value>
+				</li>
+
+				<li Class="PatchOperationAddModExtension">
+					<xpath>Defs/Vehicles.VehicleTurretDef[defName="VCE_CannonVehicle_Turret"]</xpath>
+					<value>
+						<li Class="Vehicles.CETurretDataDefModExtension">
+							<ammoSet>AmmoSet_CannonBall</ammoSet>
+							<shotHeight>2</shotHeight>
+							<speed>40</speed>
+							<sway>0.81</sway>
+							<spread>0.15</spread>
+						</li>
+					</value>
+				</li>
+
+				<!-- Cannon -->
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/Vehicles.VehicleBuildDef[defName="VCE_CannonVehicle_Blueprint"]/researchPrerequisites/li[.="Smithing"]</xpath>
+					<value>
+						<li>CE_Gunpowder</li>
+					</value>
+				</li>
+
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/Vehicles.VehicleDef[defName="VCE_CannonVehicle"]/fillPercent</xpath>
+					<value>
+						<fillPercent>0.85</fillPercent>
+					</value>
+				</li>
+
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/Vehicles.VehicleDef[defName="VCE_CannonVehicle"]/vehicleStats/Mass</xpath>
+					<value>
+						<Mass>200</Mass>
+					</value>
+				</li>
+
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/Vehicles.VehicleDef[defName="VCE_CannonVehicle"]/statBases/ArmorRating_Blunt</xpath>
+					<value>
+						<ArmorRating_Blunt>4</ArmorRating_Blunt>
+					</value>
+				</li>
+
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/Vehicles.VehicleDef[defName="VCE_CannonVehicle"]/statBases/ArmorRating_Sharp</xpath>
+					<value>
+						<ArmorRating_Sharp>2</ArmorRating_Sharp>
+					</value>
+				</li>
+
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/Vehicles.VehicleDef[defName="VCE_CannonVehicle"]/components/li[key="LeftWheel"]/armor/ArmorRating_Blunt</xpath>
+					<value>
+						<ArmorRating_Blunt>2</ArmorRating_Blunt>
+					</value>
+				</li>
+
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/Vehicles.VehicleDef[defName="VCE_CannonVehicle"]/components/li[key="LeftWheel"]/armor/ArmorRating_Sharp</xpath>
+					<value>
+						<ArmorRating_Sharp>1</ArmorRating_Sharp>
+					</value>
+				</li>
+
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/Vehicles.VehicleDef[defName="VCE_CannonVehicle"]/components/li[key="RightWheel"]/armor/ArmorRating_Blunt</xpath>
+					<value>
+						<ArmorRating_Blunt>2</ArmorRating_Blunt>
+					</value>
+				</li>
+
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/Vehicles.VehicleDef[defName="VCE_CannonVehicle"]/components/li[key="RightWheel"]/armor/ArmorRating_Sharp</xpath>
+					<value>
+						<ArmorRating_Sharp>1</ArmorRating_Sharp>
+					</value>
+				</li>
+
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/Vehicles.VehicleDef[defName="VCE_CannonVehicle"]/components/li[key="SteelStructure"]/armor/ArmorRating_Blunt</xpath>
+					<value>
+						<ArmorRating_Blunt>2</ArmorRating_Blunt>
+					</value>
+				</li>
+
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/Vehicles.VehicleDef[defName="VCE_CannonVehicle"]/components/li[key="SteelStructure"]/armor/ArmorRating_Sharp</xpath>
+					<value>
+						<ArmorRating_Sharp>1</ArmorRating_Sharp>
+					</value>
+				</li>
+
+			</operations>
+		</match>
+	</Operation>
+
+</Patch>
